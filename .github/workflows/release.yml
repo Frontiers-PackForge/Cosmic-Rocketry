@@ -1,7 +1,7 @@
 name: Release
 
 on:
-  workflow_dispatch:
+  workflow_call:
     inputs:
       version_type:
         description: 'The type of version to release (alpha | beta | release)'
