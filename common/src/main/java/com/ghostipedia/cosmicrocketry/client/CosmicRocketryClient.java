@@ -20,6 +20,8 @@ public class CosmicRocketryClient {
 
     private static void registerEntityRenderers() {
         ClientHooks.registerEntityRenderer(ModEntityTypes.TIER_5_ROCKET, c -> new RocketRenderer(c, CosmicRocketModel.TIER_5_LAYER, CosmicRocketRenderer.TIER_5_TEXTURE));
+        ClientHooks.registerEntityRenderer(ModEntityTypes.TIER_6_ROCKET, c -> new RocketRenderer(c, CosmicRocketModel.TIER_6_LAYER, CosmicRocketRenderer.TIER_6_TEXTURE));
+        ClientHooks.registerEntityRenderer(ModEntityTypes.TIER_7_ROCKET, c -> new RocketRenderer(c, CosmicRocketModel.TIER_7_LAYER, CosmicRocketRenderer.TIER_7_TEXTURE));
     }
 
     public static void onRegisterEntityLayers(ClientPlatformUtils.LayerDefinitionRegistry consumer) {
@@ -28,6 +30,8 @@ public class CosmicRocketryClient {
 
     public static void onRegisterItemRenderers(BiConsumer<Item, BlockEntityWithoutLevelRenderer> consumer) {
         consumer.accept(ModItems.TIER_5_ROCKET.get(), new RocketRenderer.ItemRenderer(CosmicRocketModel.TIER_5_LAYER, CosmicRocketRenderer.TIER_5_TEXTURE));
+        consumer.accept(ModItems.TIER_6_ROCKET.get(), new RocketRenderer.ItemRenderer(CosmicRocketModel.TIER_6_LAYER, CosmicRocketRenderer.TIER_6_TEXTURE));
+        consumer.accept(ModItems.TIER_7_ROCKET.get(), new RocketRenderer.ItemRenderer(CosmicRocketModel.TIER_7_LAYER, CosmicRocketRenderer.TIER_7_TEXTURE));
     }
 
 }

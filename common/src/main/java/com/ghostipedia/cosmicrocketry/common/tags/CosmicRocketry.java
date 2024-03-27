@@ -1,4 +1,4 @@
-package com.ghostipedia.cosmicrocketry;
+package com.ghostipedia.cosmicrocketry.common.tags;
 
 import com.ghostipedia.cosmicrocketry.common.registry.ModCreativeTab;
 import com.ghostipedia.cosmicrocketry.common.registry.ModEntityTypes;

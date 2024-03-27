@@ -19,7 +19,7 @@
   "entrypoints": {
     "main": [
       "com.ghostipedia.cosmicrocketry.fabric.CosmicRocketryFabric::init",
-      "com.ghostipedia.cosmicrocketry.CosmicRocketry::postInit"
+      "com.ghostipedia.cosmicrocketry.common.tags.CosmicRocketry::postInit"
     ],
     "client": [
       "com.ghostipedia.cosmicrocketry.client.fabric.CosmicRocketryClientFabric::init"

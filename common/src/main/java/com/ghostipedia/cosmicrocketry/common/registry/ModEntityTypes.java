@@ -19,4 +19,18 @@ public class ModEntityTypes {
             .clientTrackingRange(10)
             .sized(1.1f, 7.0f)
             .build("tier_5_rocket"));
+
+    public static final RegistryEntry<EntityType<Rocket>> TIER_6_ROCKET = ENTITY_TYPES.register("tier_6_rocket", () ->
+        EntityType.Builder.<Rocket>of(CosmicRocket::new, MobCategory.MISC)
+            .fireImmune()
+            .clientTrackingRange(10)
+            .sized(1.1f, 7.0f)
+            .build("tier_6_rocket"));
+
+    public static final RegistryEntry<EntityType<Rocket>> TIER_7_ROCKET = ENTITY_TYPES.register("tier_7_rocket", () ->
+        EntityType.Builder.<Rocket>of(CosmicRocket::new, MobCategory.MISC)
+            .fireImmune()
+            .clientTrackingRange(10)
+            .sized(1.1f, 7.0f)
+            .build("tier_7_rocket"));
 }

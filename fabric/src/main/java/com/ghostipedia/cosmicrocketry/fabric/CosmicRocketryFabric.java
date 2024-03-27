@@ -1,6 +1,6 @@
 package com.ghostipedia.cosmicrocketry.fabric;
 
-import com.ghostipedia.cosmicrocketry.CosmicRocketry;
+import com.ghostipedia.cosmicrocketry.common.tags.CosmicRocketry;
 
 public class CosmicRocketryFabric {
 

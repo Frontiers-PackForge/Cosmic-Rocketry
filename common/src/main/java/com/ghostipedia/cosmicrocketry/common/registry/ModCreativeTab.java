@@ -1,6 +1,6 @@
 package com.ghostipedia.cosmicrocketry.common.registry;
 
-import com.ghostipedia.cosmicrocketry.CosmicRocketry;
+import com.ghostipedia.cosmicrocketry.common.tags.CosmicRocketry;
 import com.teamresourceful.resourcefullib.common.item.tabs.ResourcefulCreativeTab;
 import earth.terrarium.adastra.common.registry.ModFluids;
 import earth.terrarium.adastra.common.utils.FluidUtils;
@@ -25,6 +25,8 @@ public class ModCreativeTab {
         List<ItemStack> list = new ArrayList<>();
 
         list.add(FluidUtils.fluidFilledItem(ModItems.TIER_5_ROCKET, ModFluids.FUEL));
+        list.add(FluidUtils.fluidFilledItem(ModItems.TIER_6_ROCKET, ModFluids.FUEL));
+        list.add(FluidUtils.fluidFilledItem(ModItems.TIER_7_ROCKET, ModFluids.FUEL));
 
         return list.stream();
     }
