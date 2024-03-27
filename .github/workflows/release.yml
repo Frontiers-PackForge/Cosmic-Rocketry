@@ -46,10 +46,10 @@ jobs:
         with:
           #curseforge-id: ${{ vars.CURSE_ID }}
           #curseforge-token: ${{ secrets.CURSE_TOKEN }}
-
+          #
           #modrinth-id: ${{ vars.MODRINTH_ID }}
           #modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
-
+          #
           github-token: ${{ secrets.GITHUB_TOKEN }}
           github-generate-changelog: true
           github-tag: ${{ steps.properties.outputs.minecraftVersion }}-${{ steps.properties.outputs.version }}
@@ -81,10 +81,10 @@ jobs:
         with:
           #curseforge-id: ${{ vars.CURSE_ID }}
           #curseforge-token: ${{ secrets.CURSE_TOKEN }}
-
+          #
           #modrinth-id: ${{ vars.MODRINTH_ID }}
           #modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
-
+          #
           github-token: ${{ secrets.GITHUB_TOKEN }}
           github-generate-changelog: true
           github-tag: ${{ steps.properties.outputs.minecraftVersion }}-${{ steps.properties.outputs.version }}
