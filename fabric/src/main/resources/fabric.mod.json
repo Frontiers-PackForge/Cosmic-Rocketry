@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "cosmicrockets",
+  "version": "${version}",
+  "name": "Cosmic Rockets",
+  "description": "A Simple Addon mod to add extra rocket tiers to Ad Astra",
+  "authors": [
+    "MrQuentinet"
+  ],
+  "contributors": [],
+  "contact": {
+    "website": "https://modrinth.com/mod/cosmicrocketry",
+    "repo": "https://github.com/Frontiers-PackForge/CosmicRocketry",
+    "issues": "https://github.com/Frontiers-PackForge/CosmicRocketry/issues"
+  },
+  "license": "All rights reserved",
+  "icon": "icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.ghostipedia.cosmicrocketry.fabric.CosmicRocketryFabric::init",
+      "com.ghostipedia.cosmicrocketry.CosmicRocketry::postInit"
+    ],
+    "client": [
+      "com.ghostipedia.cosmicrocketry.client.fabric.CosmicRocketryClientFabric::init"
+    ]
+  },
+  "mixins": [
+    "cosmicrocketry-common.mixins.json",
+    "cosmicrocketry.mixins.json"
+  ],
+  "depends": {
+    "fabric-api": "*",
+    "minecraft": ">=1.20.1",
+    "java": ">=17",
+    "resourcefullib": ">=2.1.23",
+    "resourcefulconfig": ">=2.1.0",
+    "botarium": ">=2.3.0"
+  }
+}
