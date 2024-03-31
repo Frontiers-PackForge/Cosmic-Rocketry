@@ -39,75 +39,37 @@ jobs:
           path: ./gradle.properties
           properties: "version enabledPlatforms minecraftVersion"
 
-#      - name: Upload Forge Releases (Curse|Modrinth|Github)
-#        id: forge_release
-#        if: contains(steps.properties.outputs.enabledPlatforms, 'forge')
-#        uses: Kir-Antipov/mc-publish@v3.3.0
-#        with:
-#          curseforge-id: ${{ vars.CURSE_ID }}
-#          curseforge-token: ${{ secrets.CURSE_TOKEN }}
-#
-#          modrinth-id: ${{ vars.MODRINTH_ID }}
-#          modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
-#
-#          github-token: ${{ secrets.GITHUB_TOKEN }}
-#          github-generate-changelog: true
-#          github-tag: ${{ steps.properties.outputs.minecraftVersion }}-${{ steps.properties.outputs.version }}
-#
-#          files: ./forge/build/libs/!(*-@(dev|sources|dev-shadow)).jar
-#          name: [ Forge ] Cosmic Rocketry ${{ steps.properties.outputs.version }}"
-#          version: ${{ steps.properties.outputs.version }}
-#          version-type: ${{ inputs.version_type }}
-#          changelog-file: changelog.md
-#          loaders: forge
-#          game-versions: ${{ steps.properties.outputs.minecraftVersion }}
-#          version-resolver: exact
-#
-#          curseforge-dependencies: |
-#            resourceful-lib | depends | *
-#            resourceful-config | depends | *
-#            botarium | depends | *
-#            ad-astra | depends | *
-#          modrinth-dependencies: |
-#            resourceful-lib | depends | *
-#            resourceful-config | depends | *
-#            botarium | depends | *
-#            ad-astra | depends | *
+      - name: Upload Forge Releases (Curse|Modrinth|Github)
+        id: forge_release
+        if: contains(steps.properties.outputs.enabledPlatforms, 'forge')
+        uses: Kir-Antipov/mc-publish@v3.3.0
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
 
-#      - name: Upload Fabric Releases (Curse|Modrinth|Github)
-#        id: fabric_release
-#        if: contains(steps.properties.outputs.enabledPlatforms, 'fabric')
-#        uses: Kir-Antipov/mc-publish@v3.3.0
-#        with:
-#          curseforge-id: ${{ vars.CURSE_ID }}
-#          curseforge-token: ${{ secrets.CURSE_TOKEN }}
-#
-#          modrinth-id: ${{ vars.MODRINTH_ID }}
-#          modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
-#
-#          github-token: ${{ secrets.GITHUB_TOKEN }}
-#          github-generate-changelog: true
-#          github-tag: ${{ steps.properties.outputs.minecraftVersion }}-${{ steps.properties.outputs.version }}
-#
-#          files: ./fabric/build/libs/!(*-@(dev|sources|dev-shadow)).jar
-#          name: [ Fabric ] Cosmic Rocketry ${{ steps.properties.outputs.version }}"
-#          version: ${{ steps.properties.outputs.version }}
-#          version-type: ${{ inputs.version_type }}
-#          changelog-file: changelog.md
-#          loaders: fabric
-#          game-versions: ${{ steps.properties.outputs.minecraftVersion }}
-#          version-resolver: exact
-#
-#          curseforge-dependencies: |
-#            resourceful-lib | depends | *
-#            resourceful-config | depends | *
-#            botarium | depends | *
-#            ad-astra | depends | *
-#          modrinth-dependencies: |
-#            resourceful-lib | depends | *
-#            resourceful-config | depends | *
-#            botarium | depends | *
-#            ad-astra | depends | *
+          files: ./forge/build/libs/!(*-@(dev|sources|dev-shadow)).jar
+          name: [ Forge ] Cosmic Rocketry ${{ steps.properties.outputs.version }}"
+          version: ${{ steps.properties.outputs.version }}
+          version-type: ${{ inputs.version_type }}
+          changelog-file: changelog.md
+          loaders: forge
+          game-versions: ${{ steps.properties.outputs.minecraftVersion }}
+          version-resolver: exact
+
+      - name: Upload Fabric Releases (Curse|Modrinth|Github)
+        id: fabric_release
+        if: contains(steps.properties.outputs.enabledPlatforms, 'fabric')
+        uses: Kir-Antipov/mc-publish@v3.3.0
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+          files: ./fabric/build/libs/!(*-@(dev|sources|dev-shadow)).jar
+          name: [ Fabric ] Cosmic Rocketry ${{ steps.properties.outputs.version }}"
+          version: ${{ steps.properties.outputs.version }}
+          version-type: ${{ inputs.version_type }}
+          changelog-file: changelog.md
+          loaders: fabric
+          game-versions: ${{ steps.properties.outputs.minecraftVersion }}
+          version-resolver: exact
 
 #      - name: Generate Discord Embed
 #        run: ./gradlew injectEmbed
