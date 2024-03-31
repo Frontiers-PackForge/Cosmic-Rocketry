@@ -47,8 +47,8 @@ jobs:
         if: contains(steps.properties.outputs.enabledPlatforms, 'forge')
         uses: Kir-Antipov/mc-publish@v3.3.0
         with:
-          curseforge-id: ${{ vars.CURSE_ID }}
-          curseforge-token: ${{ secrets.CURSE_TOKEN }}
+#          curseforge-id: ${{ vars.CURSE_ID }}
+#          curseforge-token: ${{ secrets.CURSE_TOKEN }}
 
           github-token: ${{ secrets.GITHUB_TOKEN }}
           github-generate-changelog: true
@@ -61,21 +61,20 @@ jobs:
           changelog-file: changelog.md
           loaders: forge
           game-versions: ${{ steps.properties.outputs.minecraftVersion }}
-          version-resolver: exact
 
-          curseforge-dependencies: |
-            resourceful-lib | depends | *
-            resourceful-config | depends | *
-            botarium | depends | *
-            ad-astra | depends | *
+#          curseforge-dependencies: |
+#            resourceful-lib@2.1.23(required)
+#            resourceful-config@2.1.0(required)
+#            botarium@2.3.0(required)
+#            ad-astra@1.15.18(required)
 
       - name: Upload Fabric Releases (Curse|Modrinth|Github)
         id: fabric_release
         if: contains(steps.properties.outputs.enabledPlatforms, 'fabric')
         uses: Kir-Antipov/mc-publish@v3.3.0
         with:
-          curseforge-id: ${{ vars.CURSE_ID }}
-          curseforge-token: ${{ secrets.CURSE_TOKEN }}
+#          curseforge-id: ${{ vars.CURSE_ID }}
+#          curseforge-token: ${{ secrets.CURSE_TOKEN }}
 
           github-token: ${{ secrets.GITHUB_TOKEN }}
           github-generate-changelog: true
@@ -88,10 +87,9 @@ jobs:
           changelog-file: changelog.md
           loaders: fabric
           game-versions: ${{ steps.properties.outputs.minecraftVersion }}
-          version-resolver: exact
 
-          curseforge-dependencies: |
-            resourceful-lib | depends | *
-            resourceful-config | depends | *
-            botarium | depends | *
-            ad-astra | depends | *
+#          curseforge-dependencies: |
+#            resourceful-lib@2.1.23(required)
+#            resourceful-config@2.1.0(required)
+#            botarium@2.3.0(required)
+#            ad-astra@1.15.18(required)
