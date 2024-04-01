@@ -7,7 +7,6 @@ import net.fabricmc.loom.task.RemapJarTask
 plugins {
     java
     id("maven-publish")
-    id("com.teamresourceful.resourcefulgradle") version "0.0.+"
     id("dev.architectury.loom") version "1.4-SNAPSHOT" apply false
     id("architectury-plugin") version "3.4-SNAPSHOT"
     id("com.github.johnrengelman.shadow") version "7.1.2" apply false
@@ -144,24 +143,3 @@ subprojects {
         sourceSets.main.get().resources.srcDirs("src/main/generated/resources")
     }
 }
-
-//resourcefulGradle {
-//    templates {
-//        register("embed") {
-//            val minecraftVersion: String by project
-//            val version: String by project
-//            val changelog: String = file("changelog.md").readText(Charsets.UTF_8)
-//            val fabricLink: String? = System.getenv("FABRIC_RELEASE_URL")
-//            val forgeLink: String? = System.getenv("FORGE_RELEASE_URL")
-//
-//            source.set(file("./templates/embed.json.template"))
-//            injectedValues.set(mapOf(
-//                "minecraft" to minecraftVersion,
-//                "version" to version,
-//                "changelog" to changelog,
-//                "fabric_link" to fabricLink,
-//                "forge_link" to forgeLink,
-//            ))
-//        }
-//    }
-//}

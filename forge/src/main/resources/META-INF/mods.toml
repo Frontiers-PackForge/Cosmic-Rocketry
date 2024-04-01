@@ -1,7 +1,7 @@
 modLoader = "javafml"
 loaderVersion = "[47,)"
 issueTrackerURL = "https://github.com/Frontiers-PackForge/Cosmic-Rocketry/issues"
-license = "All rights reserved"
+license = "Creative Commons"
 
 [[mods]]
 modId = "cosmicrocketry"

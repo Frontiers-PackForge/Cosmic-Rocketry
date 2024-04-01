@@ -13,7 +13,7 @@
     "repo": "https://github.com/Frontiers-PackForge/Cosmic-Rocketry",
     "issues": "https://github.com/Frontiers-PackForge/Cosmic-Rocketry/issues"
   },
-  "license": "All rights reserved",
+  "license": "Creative Commons",
   "icon": "icon.png",
   "environment": "*",
   "entrypoints": {
