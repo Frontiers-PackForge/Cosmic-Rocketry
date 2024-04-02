@@ -3,7 +3,7 @@
   "id": "cosmicrockets",
   "version": "${version}",
   "name": "Cosmic Rockets",
-  "description": "A Simple Addon mod to add extra rocket tiers to Ad Astra",
+  "description": "A Simple Addon mod to add extra rocket tiers to Ad Astra.\nThanks to Ad Astra for allowing us to use and modify their rocket model and textures",
   "authors": [
     "MrQuentinet"
   ],

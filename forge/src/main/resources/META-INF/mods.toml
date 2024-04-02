@@ -10,7 +10,9 @@ displayName = "Cosmic Rocketry"
 #updateJSONURL = "https://api.modrinth.com/updates/3ufwT9JF/forge_updates.json"
 #displayURL = "https://modrinth.com/mod/cosmic-rockets"
 authors = "MrQuentinet"
-description = "A Simple Addon mod to add extra rocket tiers to Ad Astra"
+description = """A Simple Addon mod to add extra rocket tiers to Ad Astra
+
+Thanks to Ad Astra for allowing us to use and modify their rocket model and textures"""
 logoFile = "icon.png"
 
 [[dependencies.cosmicrocketry]]
