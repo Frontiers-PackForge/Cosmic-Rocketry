@@ -9,6 +9,9 @@ on:
         required: true
         type: string
 
+permissions:
+  contents: write
+
 jobs:
   release:
     runs-on: ubuntu-latest
@@ -47,8 +50,8 @@ jobs:
         if: contains(steps.properties.outputs.enabledPlatforms, 'forge')
         uses: Kir-Antipov/mc-publish@v3.3.0
         with:
-#          curseforge-id: ${{ vars.CURSE_ID }}
-#          curseforge-token: ${{ secrets.CURSE_TOKEN }}
+          curseforge-id: ${{ vars.CURSE_ID }}
+          curseforge-token: ${{ secrets.CURSE_TOKEN }}
 
           github-token: ${{ secrets.GITHUB_TOKEN }}
           github-generate-changelog: true
@@ -62,19 +65,19 @@ jobs:
           loaders: forge
           game-versions: ${{ steps.properties.outputs.minecraftVersion }}
 
-#          curseforge-dependencies: |
-#            resourceful-lib@2.1.23(required)
-#            resourceful-config@2.1.0(required)
-#            botarium@2.3.0(required)
-#            ad-astra@1.15.18(required)
+          curseforge-dependencies: |
+            resourceful-lib@2.1.23(required)
+            resourceful-config@2.1.0(required)
+            botarium@2.3.0(required)
+            ad-astra@1.15.18(required)
 
       - name: Upload Fabric Releases (Curse|Modrinth|Github)
         id: fabric_release
         if: contains(steps.properties.outputs.enabledPlatforms, 'fabric')
         uses: Kir-Antipov/mc-publish@v3.3.0
         with:
-#          curseforge-id: ${{ vars.CURSE_ID }}
-#          curseforge-token: ${{ secrets.CURSE_TOKEN }}
+          curseforge-id: ${{ vars.CURSE_ID }}
+          curseforge-token: ${{ secrets.CURSE_TOKEN }}
 
           github-token: ${{ secrets.GITHUB_TOKEN }}
           github-generate-changelog: true
@@ -88,8 +91,8 @@ jobs:
           loaders: fabric
           game-versions: ${{ steps.properties.outputs.minecraftVersion }}
 
-#          curseforge-dependencies: |
-#            resourceful-lib@2.1.23(required)
-#            resourceful-config@2.1.0(required)
-#            botarium@2.3.0(required)
-#            ad-astra@1.15.18(required)
+          curseforge-dependencies: |
+            resourceful-lib@2.1.23(required)
+            resourceful-config@2.1.0(required)
+            botarium@2.3.0(required)
+            ad-astra@1.15.18(required)
