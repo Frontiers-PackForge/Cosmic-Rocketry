@@ -1,5 +1,5 @@
 modLoader = "javafml"
-loaderVersion = "[47,)"
+loaderVersion = "[1,)"
 issueTrackerURL = "https://github.com/Frontiers-PackForge/Cosmic-Rocketry/issues"
 license = "Creative Commons"
 
@@ -7,8 +7,6 @@ license = "Creative Commons"
 modId = "cosmicrocketry"
 version = "${version}"
 displayName = "Cosmic Rocketry"
-#updateJSONURL = "https://api.modrinth.com/updates/3ufwT9JF/forge_updates.json"
-#displayURL = "https://modrinth.com/mod/cosmic-rockets"
 authors = "MrQuentinet"
 description = """A Simple Addon mod to add extra rocket tiers to Ad Astra
 
@@ -16,43 +14,43 @@ Thanks to Ad Astra for allowing us to use and modify their rocket model and text
 logoFile = "icon.png"
 
 [[dependencies.cosmicrocketry]]
-modId = "forge"
-mandatory = true
-versionRange = "[47,)"
+modId = "neoforge"
+type="required"
+versionRange = "[20.4,)"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.cosmicrocketry]]
 modId = "minecraft"
-mandatory = true
-versionRange = "[1.20.1,)"
+type="required"
+versionRange = "[1.20.4,)"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.cosmicrocketry]]
 modId = "resourcefullib"
-mandatory = true
-versionRange = "[2.1.23,)"
+type="required"
+versionRange = "[2.4.6,)"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.cosmicrocketry]]
 modId = "resourcefulconfig"
-mandatory = true
-versionRange = "[2.1.0,)"
+type="required"
+versionRange = "[2.4.4,)"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.cosmicrocketry]]
 modId = "botarium"
-mandatory = true
-versionRange = "[2.3.0,)"
+type="required"
+versionRange = "[3.0.7,)"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.cosmicrocketry]]
 modId = "ad_astra"
-mandatory = true
-versionRange = "[1.15.18,)"
+type="required"
+versionRange = "[1.16.5,)"
 ordering = "NONE"
 side = "BOTH"

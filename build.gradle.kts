@@ -6,7 +6,6 @@ import net.fabricmc.loom.task.RemapJarTask
 
 plugins {
     java
-    id("maven-publish")
     id("dev.architectury.loom") version "1.4-SNAPSHOT" apply false
     id("architectury-plugin") version "3.4-SNAPSHOT"
     id("com.github.johnrengelman.shadow") version "7.1.2" apply false
@@ -18,7 +17,6 @@ architectury {
 }
 
 subprojects {
-    apply(plugin = "maven-publish")
     apply(plugin = "dev.architectury.loom")
     apply(plugin = "architectury-plugin")
     apply(plugin = "com.github.johnrengelman.shadow")
@@ -38,9 +36,10 @@ subprojects {
 
     repositories {
         mavenCentral()
-        maven(url = "https://maven.architectury.dev/")
         maven(url = "https://maven.teamresourceful.com/repository/maven-public/")
         maven(url = "https://maven.firstdarkdev.xyz/snapshots")
+        maven(url = "https://maven.neoforged.net/releases/")
+        maven(url = "https://maven.architectury.dev/")
         maven {
             url = uri("https://www.cursemaven.com")
             content {
@@ -82,7 +81,7 @@ subprojects {
         "modApi"(group = "com.teamresourceful.resourcefullib", name = "resourcefullib-$modLoader-$minecraftVersion", version = resourcefulLibVersion)
         "modApi"(group = "com.teamresourceful.resourcefulconfig", name = "resourcefulconfig-$modLoader-$minecraftVersion", version = resourcefulConfigVersion)
         "modApi"(group = "earth.terrarium.botarium", name = "botarium-$modLoader-$minecraftVersion", version = botariumVersion)
-        "modApi"(group = "earth.terrarium.adastra", name = "ad_astra-$modLoader-$minecraftVersion", version = adAstraVersion)
+        "modApi"(group = "earth.terrarium.adastra", name = "adastra-$modLoader-$minecraftVersion", version = adAstraVersion)
 
         if (isCommon) {
             "modApi"(group = "mezz.jei", name = "jei-$minecraftVersion-common-api", version = jeiVersion)

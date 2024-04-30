@@ -1,13 +1,8 @@
 architectury {
-    forge()
+    neoForge()
 }
 
 loom {
-    forge {
-        mixinConfig( "cosmicrocketry-common.mixins.json")
-        mixinConfig( "cosmicrocketry.mixins.json")
-    }
-
     runs {
         create("data") {
             data()
@@ -21,21 +16,21 @@ loom {
 val common: Configuration by configurations.creating {
     configurations.compileClasspath.get().extendsFrom(this)
     configurations.runtimeClasspath.get().extendsFrom(this)
-    configurations["developmentForge"].extendsFrom(this)
+    configurations["developmentNeoForge"].extendsFrom(this)
 }
 
 dependencies {
     common(project(":common", configuration = "namedElements")) { isTransitive = false }
-    shadowCommon(project(path = ":common", configuration = "transformProductionForge")) { isTransitive = false }
+    shadowCommon(project(path = ":common", configuration = "transformProductionNeoForge")) { isTransitive = false }
 
     val minecraftVersion: String by project
     val mixinExtrasVersion: String by project
-    val forgeVersion: String by project
+    val neoforgeVersion: String by project
     val jeiVersion: String by project
 
-    forge(group = "net.minecraftforge", name = "forge", version = "$minecraftVersion-$forgeVersion")
+    neoForge(group = "net.neoforged", name = "neoforge", version = neoforgeVersion)
 
-    modLocalRuntime(group = "mezz.jei", name = "jei-$minecraftVersion-forge", version = jeiVersion) { isTransitive = false }
+    modLocalRuntime(group = "mezz.jei", name = "jei-$minecraftVersion-neoforge", version = jeiVersion) { isTransitive = false }
 
 //    modLocalRuntime(group = "maven.modrinth", name = "jade", version = "13.2.2")
 
@@ -43,7 +38,7 @@ dependencies {
     forgeRuntimeLibrary("com.teamresourceful:yabn:1.0.3")
     forgeRuntimeLibrary("com.teamresourceful:bytecodecs:1.0.2")
 
-    "annotationProcessor"(group = "io.github.llamalad7", name = "mixinextras-forge", version = mixinExtrasVersion).apply {
+    "annotationProcessor"(group = "io.github.llamalad7", name = "mixinextras-neoforge", version = mixinExtrasVersion).apply {
         implementation(this)
         "include"(this)
     }

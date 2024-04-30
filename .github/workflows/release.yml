@@ -45,9 +45,9 @@ jobs:
       - name: Build Project
         run: ./gradlew build
 
-      - name: Upload Forge Releases (Curse|Modrinth|Github)
-        id: forge_release
-        if: contains(steps.properties.outputs.enabledPlatforms, 'forge')
+      - name: Upload NeoForge Releases (Curse|Modrinth|Github)
+        id: neoforge_release
+        if: contains(steps.properties.outputs.enabledPlatforms, 'neoforge')
         uses: Kir-Antipov/mc-publish@v3.3.0
         with:
           curseforge-id: ${{ vars.CURSE_ID }}
@@ -57,12 +57,12 @@ jobs:
           github-generate-changelog: true
           github-tag: "${{ steps.properties.outputs.minecraftVersion }}-${{ steps.properties.outputs.version }}"
 
-          files: ./forge/build/libs/!(*-@(dev|sources|dev-shadow)).jar
-          name: "[ Forge ] Cosmic Rocketry ${{ steps.properties.outputs.version }}"
+          files: ./neoforge/build/libs/!(*-@(dev|sources|dev-shadow)).jar
+          name: "[ Neoforge ] Cosmic Rocketry ${{ steps.properties.outputs.version }}"
           version: ${{ steps.properties.outputs.version }}
           version-type: ${{ inputs.version_type }}
           changelog-file: changelog.md
-          loaders: forge
+          loaders: neoforge
           game-versions: ${{ steps.properties.outputs.minecraftVersion }}
 
           curseforge-dependencies: |
